@@ -12,27 +12,38 @@
     <section class="container">
       <h1>PhirePhiter's angular list</h1>
       <h3>Add a new person</h3>
-      <p>PhirePhiter: {{phirePhiter}}</p>
+      <!-- <p>PhirePhiter: {{phirePhiter}}</p>
       <p>phirePhiter.people: {{phirePhiter.people}}</p>
-      <p>phirePhiter.newPerson: {{phirePhiter.newPerson}}</p>
+      <p>phirePhiter.newPerson: {{phirePhiter.newPerson}}</p> -->
       <form class="col-md-12">
         <div class="form-group col-md-6">
           <label for="firstName">First Name</label>
           <input type="text" name="firstName" class="form-control" ng-model="phirePhiter.newPerson.firstName" placeholder="First Name"/>
+        </div>
+        <div class="form-group col-md-6">
           <label for="lastName">Last Name</label>
           <input type="text" name="lastName" class="form-control" ng-model="phirePhiter.newPerson.lastName" placeholder="Last Name"/>
+        </div>
+        <div class="form-group col-md-6">
           <label for="git_username">Github Username</label>
           <input type="text" name="git_username" class="form-control" ng-model="phirePhiter.newPerson.git_username" placeholder="Github Username"/>
+        </div>
+        <div class="form-group col-md-6">
           <label for="shoutout">Shoutout</label>
           <input type="text" name="shoutout" class="form-control" ng-model="phirePhiter.newPerson.shoutout" placeholder="Shout Out"/>
-          <button ng-click="phirePhiter.createPerson()">Add new person</button>
+        </div>
+        <div class="form-group col-md-6">
+          <button class="btn btn-primary" ng-click="phirePhiter.createPerson()">Add new person</button>
         </div>
         <!-- What other fields do we need to ask for in order to get the information we need? -->
       </form>
     </section>
     <section class="container">
-      <label>Search: <input ng-model="phirePhiter.searchText"></label>
-      {{phirePhiter.searchText}}
+      <div class="form-group">
+        <label>Search: </label>
+        <input class="form-control col-md-6" ng-model="phirePhiter.searchText">
+      </div>
+      <!-- {{phirePhiter.searchText}} -->
       <h3>Class List</h3>
       <ul class="list-group">
         <li class="list-group-item" ng-repeat="person in phirePhiter.people | filter:phirePhiter.searchText"> <!-- What needs to be repeated? -->
